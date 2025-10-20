@@ -9,19 +9,22 @@ public class ReportGenerator {
     private LogProcessor logProcessor;
     private String lastReport;
 
-    public ReportGenerator(LogProcessor logProcessor){
-        if (logProcessor == null){
+    public ReportGenerator(LogProcessor logProcessor) {
+        if (logProcessor == null) {
             throw new IllegalArgumentException("LogProcessor no puede ser null");
         }
         this.logProcessor = logProcessor;
     }
 
-    public String generateReport(){
+    public String generateReport() {
         Map<String, Integer> stats = logProcessor.getStatistics();
         StringBuilder report = new StringBuilder();
 
-        int total =0;
-        for (String level : stats.keySet()){
+        report.append("=== INFORME DE LOGS ===\n");
+
+
+        int total = 0;
+        for (String level : stats.keySet()) {
             int count = stats.get(level);
             total += count;
             report.append(String.format("%s: %d\n", level, count));
@@ -33,11 +36,20 @@ public class ReportGenerator {
         lastReport = report.toString();
 
 
-
         return lastReport;
     }
 
-    public String exportReport(String file){
+    public void exportReport(String file) {
+        Path path = Paths.get(file);
+        try {
+            if (lastReport == null) {
+                lastReport = generateReport();
+            }
+            Files.writeString(path, lastReport);
+        } catch (IOException e) {
+            System.err.println("Error al escribir el informe: " + e.getMessage());
+        }
 
     }
+
 }
