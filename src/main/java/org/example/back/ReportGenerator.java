@@ -20,8 +20,24 @@ public class ReportGenerator {
         Map<String, Integer> stats = logProcessor.getStatistics();
         StringBuilder report = new StringBuilder();
 
-        for (String level : stats.keySet());
+        int total =0;
+        for (String level : stats.keySet()){
+            int count = stats.get(level);
+            total += count;
+            report.append(String.format("%s: %d\n", level, count));
+        }
+        //Se revisa luego
+        report.append("------------------------\n");
+        report.append(String.format("TOTAL: %d\n", total));
+
+        lastReport = report.toString();
+
+
 
         return lastReport;
+    }
+
+    public String exportReport(String file){
+
     }
 }
