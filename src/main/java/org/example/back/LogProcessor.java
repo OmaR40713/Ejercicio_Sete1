@@ -62,7 +62,7 @@ public class LogProcessor {
         return result;
     }
 
-    public int countErrors(){
+    public int count(String level){
         //Creamos una variable para el contador.
         int count = 0;
 
@@ -70,7 +70,7 @@ public class LogProcessor {
         for (String line: lines){
             //Creamos un if para verificar que en la linea esta "ERROR"
             //y sumamos uno al contador.
-            if (line.contains("ERROR")){
+            if (line.contains(level)){
                 count++;
             }
         }
