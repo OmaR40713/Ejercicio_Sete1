@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="LogAnalyzer">
+    <output-path>$PROJECT_DIR$/out/artifacts/LogAnalyzer</output-path>
+    <root id="archive" name="PSPPrac1AL.jar">
+      <element id="module-output" name="PSPPrac1AL" />
+    </root>
+  </artifact>
+</component>
