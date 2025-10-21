@@ -1,14 +1,11 @@
 package org.example.back;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
 import static java.nio.file.StandardOpenOption.APPEND;
 
@@ -41,7 +38,7 @@ public class LogAnalyzer {
 
                 String cuentaLog = args[2];
                 List<String> countLines = processor.filterByLevel(cuentaLog);
-                System.out.println("Total de líneas con nivel " + cuentaLog + ": " + countLines.size());
+                System.out.println("Total de lineas con nivel " + cuentaLog + ": " + countLines.size());
                 break;
 
             case "filter":
@@ -60,7 +57,7 @@ public class LogAnalyzer {
                 matches.forEach(System.out::println);
                 break;
 
-            case "stast":
+            case "stats":
                 Map<String, Integer> stats = processor.getStatistics();
                 System.out.println("Las Estadisticas del log son:");
                 stats.forEach((key, value) -> System.out.println(key + ": " + value));
@@ -90,7 +87,7 @@ public class LogAnalyzer {
                 break;
         }
 
-        System.exit(1);
+        System.exit(0);
 
     }
 

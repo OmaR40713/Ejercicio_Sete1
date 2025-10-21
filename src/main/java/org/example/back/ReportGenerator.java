@@ -1,5 +1,6 @@
 package org.example.back;
 
+import java.io.File;
 import java.nio.file.*;
 import java.io.IOException;
 import java.util.Map;
@@ -42,6 +43,9 @@ public class ReportGenerator {
     public void exportReport(String file) {
         Path path = Paths.get(file);
         try {
+            if (!Files.exists(path)){
+                Files.createFile(path);
+            }
             if (lastReport == null) {
                 lastReport = generateReport();
             }
