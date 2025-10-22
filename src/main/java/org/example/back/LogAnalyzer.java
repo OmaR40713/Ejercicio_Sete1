@@ -75,7 +75,7 @@ public class LogAnalyzer {
                     report.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
                 }
                 if (reporteLog != null) {
-                    Files.writeString(reporteLog, report.toString(), APPEND);
+                    Files.writeString(reporteLog, report.toString());
                     System.out.println("Informe guardado en:" + reporteLog);
                 } else {
                     System.out.println(report);
