@@ -1,4 +1,4 @@
-package org.example.front;
+/*package org.example.front;
 
 import java.io.*;
 import java.util.*;
@@ -128,12 +128,9 @@ public class LogManager2 {
                     System.out.println(linea);
                 }
             }
-
-
         } catch (IOException e) {
             System.err.println("Error al ejecutar el proceso: " + e.getMessage());
         }
     }
-
-
 }
+*/
