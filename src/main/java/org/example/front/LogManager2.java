@@ -115,8 +115,6 @@ public class LogManager2 {
         }
     }
 
-// ---------------- MÉTODO AUXILIAR ----------------
-
     private static void ejecutarProceso(List<String> comandos) {
         try {
             ProcessBuilder pb = new ProcessBuilder(comandos);

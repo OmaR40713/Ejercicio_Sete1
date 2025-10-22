@@ -41,7 +41,7 @@ public class ReportGenerator {
     }
 
     public void exportReport(String file) {
-        Path path = Paths.get(file);
+        Path path = Path.of("files/",file);
         try {
             if (!Files.exists(path)){
                 Files.createFile(path);
