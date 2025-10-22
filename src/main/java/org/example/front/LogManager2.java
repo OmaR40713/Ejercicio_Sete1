@@ -129,12 +129,8 @@ public class LogManager2 {
                 }
             }
 
-            int codigo = proceso.waitFor();
-            if (codigo != 0) {
-                System.err.println("El proceso terminó con errores. Código: " + codigo);
-            }
 
-        } catch (IOException | InterruptedException e) {
+        } catch (IOException e) {
             System.err.println("Error al ejecutar el proceso: " + e.getMessage());
         }
     }
